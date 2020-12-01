@@ -8,12 +8,11 @@ a = [];
 b = [];
 for i=1:length(n)/2
     aux = n+n2 == 2020;
-    a = [a,n(aux),n2(aux)];
+    a = [n(aux),n2(aux)];
     if any(aux)
         break;
     end
     n2 = circshift(n2,1);
 end
-a = unique(a);
 fprintf("%d\n", prod(a));
 toc

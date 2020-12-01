@@ -10,7 +10,7 @@ a = [];
 for i=1:length(n)/2
     for k=1:length(n)/2
         aux = n+n2+n3 == 2020;
-        a = [a,n(aux),n2(aux),n3(aux)];
+        a = [n(aux),n2(aux),n3(aux)];
         if any(aux)
             break;
         end
@@ -18,6 +18,5 @@ for i=1:length(n)/2
     end
     n2 = circshift(n2,1);
 end
-a = unique(a);
 fprintf("%d\n",prod(a))
 toc
