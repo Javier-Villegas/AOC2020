@@ -3,8 +3,8 @@ fid = fopen('aoc1.txt');
 n = textscan(fid,'%d');
 n = n{1};
 fclose(fid);
-n2 = wshift('1d', n);
-n3 = wshift('1d',n2);
+n2 = circshift(n,1);
+n3 = circshift(n2,1);
 a = [];
 
 for i=1:length(n)/2
@@ -14,9 +14,9 @@ for i=1:length(n)/2
         if any(aux)
             break;
         end
-        n3 = wshift('1d', n3);
+        n3 = circshift(n3,1);
     end
-    n2 = wshift('1d', n2);
+    n2 = circshift(n2,1);
 end
 a = unique(a);
 fprintf("%d\n",prod(a))
