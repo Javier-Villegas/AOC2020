@@ -1,7 +1,7 @@
 tic
 fid = fopen('aoc1.txt');
 n = textscan(fid,'%d');
-n = n{1};
+n = sort(n{1});
 fclose(fid);
 n2 = circshift(n,1);
 a = [];
